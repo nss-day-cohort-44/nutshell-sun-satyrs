@@ -1,6 +1,8 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
+
 
 
 /*
