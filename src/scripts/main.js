@@ -1,7 +1,8 @@
+console.log("you rock :)")
+
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { getEvents} from "./events/EventDataProvider.js"
 
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -11,4 +12,3 @@ import { getEvents} from "./events/EventDataProvider.js"
         ensure that the Nutshell component gets rendered
 */
 
-getEvents()
