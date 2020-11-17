@@ -1,12 +1,10 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import {getNews, useNews} from "./news/NewsDataProvider.js"
 import { NewsForm } from "./news/NewsForm.js"
 import { NewsList } from "./news/NewsList.js"
 
-getNews()
-useNews()
+
 NewsForm()
 NewsList()
 

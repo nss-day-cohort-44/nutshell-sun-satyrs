@@ -13,7 +13,7 @@ let news = [];
 
 // fetching the data from the local json server. and store in the getNews function and export this function.
 export const getNews = () => {
-    return fetch("http://localhost:8088/database")
+    return fetch("http://localhost:8088/news")
         .then(response => response.json())
         .then(parsedNews => {
             news = parsedNews;
@@ -27,7 +27,7 @@ export const useNews = () => {
 };
 
 export const saveNews = (news) => {
-    return fetch('http://localhost:8088/database', {
+    return fetch('http://localhost:8088/news', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

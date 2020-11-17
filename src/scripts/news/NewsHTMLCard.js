@@ -1,3 +1,5 @@
+// Author Saneet prasad
+//making the html structure for each news card.
 export const NewsCard = newsObj => {
     return `
         <div class="newsCard">
