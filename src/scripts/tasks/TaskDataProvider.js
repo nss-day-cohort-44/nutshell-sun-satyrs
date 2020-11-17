@@ -9,9 +9,9 @@ const eventHub = document.querySelector(".container")
 // this function will be called after a task is saved/deleted to 
 // re-render the event list without having to refresh
 const dispatchStateChangeEvent = () => {
-    const eventStateChanged = new CustomEvent("taskStateChanged")
+    const taskStateChanged = new CustomEvent("taskStateChanged")
 
-    eventHub.dispatchEvent(taksStateChanged)
+    eventHub.dispatchEvent(taskStateChanged)
 }
 
 // init array to hold tasks returned by useTasks()
@@ -35,5 +35,23 @@ export const getTasks = () => {
 }
 
 // post a new event object to the json file, invokes getTasks() and dispatchStateChangeEvent()
+export const saveTask = task => {
+    return fetch("http://localhost:8088/tasks", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(task)
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+}
 
-
+// delete a given event object from the API/database.json, invoke getTasks() and dispatchStateChangeEvent
+export const deleteTask = taskId => {
+    return fetch(`httl://localhost:8088/tasks/${taskId}`, {
+        method: "DELETE"
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+} 
