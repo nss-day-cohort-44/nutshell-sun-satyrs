@@ -12,7 +12,6 @@ const contentElement = document.querySelector("#events")
 
 eventHub.addEventListener("eventStateChanged", () => EventList())
 
-console.log()
 
 // empty arrays for users and events
 let users = []
@@ -38,7 +37,7 @@ const render = () => {
     console.log(events)
     console.log(activeUserEvents)
     console.log(sessionStorage.getItem("activeUser"))
-
+    
     for (const event of activeUserEvents) {
     eventHTMLRep += EventAsHTML(event)
     }
@@ -48,3 +47,4 @@ const render = () => {
         ${eventHTMLRep}
     `
 }
+
