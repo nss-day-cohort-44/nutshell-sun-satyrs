@@ -1,6 +1,9 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
+
+
 import { getUsers } from "./users/UserDataProvider.js"
 import { getEvents} from "./events/EventDataProvider.js"
 
@@ -14,3 +17,4 @@ ensure that the Nutshell component gets rendered
 
 getUsers()
 getEvents()
+getTasks()
