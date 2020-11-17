@@ -1,11 +1,13 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
-import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
+
 
 
 import { getUsers } from "./users/UserDataProvider.js"
 import { getEvents} from "./events/EventDataProvider.js"
+import { getTasks } from "./tasks/TaskDataProvider.js"
+import { taskButton } from "./tasks/TaskButton.js"
 
 /*
 1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -18,3 +20,4 @@ ensure that the Nutshell component gets rendered
 getUsers()
 getEvents()
 getTasks()
+taskButton()
