@@ -1,3 +1,5 @@
+console.log("you rock")
+
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
@@ -12,7 +14,10 @@ import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
 
 import { getUsers } from "./users/UserDataProvider.js"
 import { getEvents} from "./events/EventDataProvider.js"
+import { EventList } from "./events/EventList.js"
+
 import { deleteMessage, getMessages, useMessages } from "./messages/MessageDataProvider.js"
+
 
 /*
 1. Check if the user is authenticated by looking in session storage for `activeUser`
@@ -27,6 +32,11 @@ ensure that the Nutshell component gets rendered
 
 getUsers()
 getEvents()
+
+
+
+EventList()
+
 getMessages()
 // LoginForm()
 if (!sessionStorage.length) {
@@ -37,3 +47,4 @@ else {
     Nutshell()
 }
 getTasks()
+
