@@ -21,7 +21,6 @@ export const getEvents = () => {
         .then(res => res.json())
         .then(parsedEvents => {
             events = parsedEvents
-            console.log(parsedEvents)
         })
 }
 
