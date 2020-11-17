@@ -10,8 +10,6 @@ import { NewsList } from "./news/NewsList.js"
 
 NewsForm()
 NewsList()
-import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
-
 
 import { getUsers } from "./users/UserDataProvider.js"
 import { getEvents} from "./events/EventDataProvider.js"
