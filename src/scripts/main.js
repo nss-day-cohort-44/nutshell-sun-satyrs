@@ -19,4 +19,12 @@ ensure that the Nutshell component gets rendered
 getUsers()
 getEvents()
 getMessages()
+// LoginForm()
+if (!sessionStorage.length) {
+    LoginForm()
+    RegisterForm()
+}
+else {
+    Nutshell()
+}
 getTasks()
