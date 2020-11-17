@@ -8,6 +8,9 @@ Please delete options that are not relevant.
 - [x] Breaking change (fix or feature that would cause existing functionality to not work as expected)
 # Testing Instructions
 Please describe the tests required to verify your changes. Provide instructions so PR Tester can check functionality. Please also list any relevant details for your tests
+1. `git fetch --all`
+1. `git checkout branch-name`
+1. `serve`
 # Checklist:
 - [ ] My code follows the style guidelines of this project
 - [ ] I have performed a self-review of my own code
