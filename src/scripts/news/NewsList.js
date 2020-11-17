@@ -1,7 +1,7 @@
 //Author Sanjeet Prasad
 
 
-import {getNews, useNews} from "./NewsDataProvider.js"
+import {getNews, useNews, deleteNews} from "./NewsDataProvider.js"
 import {NewsCard} from "./NewsHTMLCard.js"
 
 const newsContainer = document.querySelector(".newsDisplayContainer");
@@ -33,3 +33,19 @@ const render = (newsArray) => {
     ${newsHTMLRepresentations}
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+
+    // console.log(clickEvent, "id?")
+    if (clickEvent.target.id.startsWith("deleteNews--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+       
+       deleteNews(id).then(
+           () => {
+               const updatedNotes = useNews()
+               render(updatedNotes)
+           }
+       )
+    }
+})

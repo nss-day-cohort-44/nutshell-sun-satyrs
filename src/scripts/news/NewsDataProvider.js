@@ -37,3 +37,11 @@ export const saveNews = (news) => {
     .then(getNews)
     .then(dispatchStateChangeEvent)
 }
+
+
+export const deleteNews = (newsId) => {
+    return fetch(`http://localhost:8088/news/${newsId}`, {
+        method: "DELETE"
+    })
+        .then(getNews)
+}
