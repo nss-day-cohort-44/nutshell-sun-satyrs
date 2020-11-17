@@ -8,7 +8,7 @@ import { getTasks, useTasks } from "./tasks/TaskDataProvider.js"
 
 import { getUsers } from "./users/UserDataProvider.js"
 import { getEvents} from "./events/EventDataProvider.js"
-import { EventList } from "./events/EventList.js"
+
 
 import { deleteMessage, getMessages, useMessages } from "./messages/MessageDataProvider.js"
 
@@ -21,14 +21,13 @@ import { deleteMessage, getMessages, useMessages } from "./messages/MessageDataP
 ensure that the Nutshell component gets rendered
 */
 
-getUsers()
-getEvents()
 
 
 
-EventList()
 
-getMessages()
+
+
+
 // LoginForm()
 if (!sessionStorage.length) {
     LoginForm()
@@ -37,5 +36,5 @@ if (!sessionStorage.length) {
 else {
     Nutshell()
 }
-getTasks()
+
 
