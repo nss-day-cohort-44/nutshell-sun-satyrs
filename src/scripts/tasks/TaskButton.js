@@ -7,13 +7,13 @@ const eventHub = document.querySelector(".container")
 // render button to index.html
 export const taskButton = () => {
     buttonTarget.innerHTML = `
-    <button id="display-task-button">Create New Task</button>
+    <button id="create-task-button">Create New Task</button>
    `
 }
 
 // listen for matching click event and create/dispatch CustomEvent: "createTaskClicked"
 eventHub.addEventListener("click", (clickEvent) => {
-    if (clickEvent.target.id === "display-task-button") {
+    if (clickEvent.target.id === "create-task-button") {
         // debug
         console.log("Create New Task button was clicked")
 
