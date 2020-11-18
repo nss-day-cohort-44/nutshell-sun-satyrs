@@ -24,7 +24,7 @@ export const useTasks = () => {
 
 // fetch & format data and populate tasks array
 export const getTasks = () => {
-    return fetch("http://localhost:8088/tasks")
+    return fetch("http://localhost:8088/tasks?complete=false")
     .then(response => response.json() )
     .then (
         parsedTasks => {
