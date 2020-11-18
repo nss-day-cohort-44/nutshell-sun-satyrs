@@ -1,6 +1,8 @@
 // Author: Will
 // Purpose: Form that allows the user to save a new event
 
+import { saveEvent } from "./EventDataProvider.js"
+
 const contentTarget = document.querySelector(".container--right")
 const eventHub = document.querySelector(".container")
 
@@ -16,7 +18,28 @@ export const renderEventForm = () => {
 }
 
 
-// add eventlistener on add new event button from event list
+// eventlistener on add new event button from event list
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "addEvent") {
+        renderEventForm()
+    }
+})
 
+// listening for save button on form. storing new object with values. passing through save function
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "event--saveButton") {
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
+        const name = document.querySelector("#event--name").value
+        const date = document.querySelector("#event--dateOfEvent").value
+        const location = document.querySelector("#event--location").value
 
-// need to save input info and pass through saveEvent
+        const newEvent = {
+            userId,
+            name,
+            date,
+            location
+        }
+        saveEvent(newEvent)
+    }
+})
+

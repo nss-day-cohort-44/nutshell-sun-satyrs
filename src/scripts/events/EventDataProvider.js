@@ -44,9 +44,9 @@ export const saveEvent = event => {
 
 // deletes event object from the json file, invokes getEvents() and dispatchStateChangeEvent()
 export const deleteEvent = eventId => {
-    return fetch(`httl://localhost:8088/events/${eventId}`, {
+    return fetch(`http://localhost:8088/events/${eventId}`, {
         method: "DELETE"
     })
-    .then(getNotes)
+    .then(getEvents)
     .then(dispatchStateChangeEvent)
 }
