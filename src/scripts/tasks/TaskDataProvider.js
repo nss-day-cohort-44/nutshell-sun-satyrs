@@ -59,14 +59,18 @@ export const deleteTask = taskId => {
 // not tested, 
 export const updateTask = (taskId) => {
     return fetch(`http://localhost:8088/tasks/${taskId}`, {
-        method: "PUT",
+        method: "PATCH",
         body: JSON.stringify(
             {
-                "complete": false,
-            })
-        // 
+                complete: true
+            }),
+            headers:
+            {
+               "Content-type": "application/json; charset=UTF-8"
+            }
     })
     .then(getTasks)
+    .then(console.log(taskId))
     .then(dispatchStateChangeEvent)
         
 }
