@@ -3,6 +3,10 @@ author: davidb
 purpose: responsible for HTML for individual task
 */
 
+import { deleteTask } from './TaskDataProvider.js'
+
+const eventHub = document.querySelector(".container")
+
 export const TaskAsHTML = (task) => {
     return `
     <section class="task" id="${task.id}">
@@ -14,6 +18,14 @@ export const TaskAsHTML = (task) => {
     `
 }
 
+// listens for delete button. Separates id and passes the id through the delete function 
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id.startsWith("deleteTask--")) {
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        deleteTask(id)
+    }
+})
 
 
 // Given a user wants to mark a task complete
