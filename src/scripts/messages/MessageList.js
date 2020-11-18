@@ -33,6 +33,7 @@ const renderMessages = () => {
     }
     contentTarget.innerHTML += `
         <h3>Messages</h3>
+        <button id="addMessage"> New Message </button>
         ${messageAsHTML}
         `
 }
