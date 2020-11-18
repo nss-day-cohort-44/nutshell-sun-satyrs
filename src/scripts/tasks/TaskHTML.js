@@ -3,7 +3,7 @@ author: davidb
 purpose: responsible for HTML for individual task
 */
 
-import { deleteTask } from './TaskDataProvider.js'
+import { deleteTask, updateTask } from './TaskDataProvider.js'
 
 const eventHub = document.querySelector(".container")
 
@@ -37,7 +37,7 @@ eventHub.addEventListener("click", clickEvent => {
 
         console.log(`task complete button selected for taskComplete--${id}`)
         console.log(id)
-        // updateTask(id)
+        updateTask(id)
     }
 })
 
@@ -55,7 +55,7 @@ eventHub.addEventListener("click", clickEvent => {
     // revisit render function to only render task with complete === false
     // build a new array with filter or similar
 
-// <div class="task__status">Complete:${task.complete}</div>
+
 
 
 // Better Pattern
@@ -63,3 +63,6 @@ eventHub.addEventListener("click", clickEvent => {
 // when clicked, should mark the task as complete in the database
     // add eventListener for checkbox event
     // invoke updateTask() as event action
+
+
+    // <div class="task__status">Complete:${task.complete}</div>
