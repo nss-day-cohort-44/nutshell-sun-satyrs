@@ -4,6 +4,7 @@ import { EventList } from "./events/EventList.js"
 import { NewsForm } from "./news/NewsForm.js"
 import { NewsList } from "./news/NewsList.js"
 import { taskButton } from './tasks/TaskButton.js'
+import { TaskList } from "./tasks/TaskList.js"
 
 const contentTarget = document.querySelector(".welcome")
 
@@ -17,4 +18,5 @@ export const Nutshell = () => {
     NewsList()
     MessageList()
     MessageForm()
+    TaskList()
 }
