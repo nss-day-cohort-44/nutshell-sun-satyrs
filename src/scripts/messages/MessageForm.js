@@ -31,7 +31,7 @@ eventHub.addEventListener("click", clickEvent => {
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "message--sendButton") {
         const userId = +(sessionStorage.getItem("activeUser"))
-        const content = document.getElementById("message--content").value
+        const message = document.getElementById("message--content").value
         const timestamp = new Date().toLocaleString()
         // let date = new Date()
         // const timestamp = date.getTime()
@@ -39,7 +39,7 @@ eventHub.addEventListener("click", clickEvent => {
 
         const newMessage = {
             userId,
-            content,
+            message,
             timestamp
         }
         saveMessage(newMessage)
