@@ -53,4 +53,5 @@ export const deleteNews = (newsId) => {
         method: "DELETE"
     })
         .then(getNews)
+        .then(dispatchStateChangeEvent)
 }
