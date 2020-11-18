@@ -2,7 +2,7 @@
 
 import { saveNews } from "./NewsDataProvider.js"
 
-const contentTarget = document.querySelector(".newsFormContainer")
+const contentTarget = document.querySelector(".container--right")
 
 const eventHub = document.querySelector(".container")
 
@@ -62,3 +62,9 @@ eventHub.addEventListener("click", clickEvent =>{
 export const NewsForm = () => {
     render()
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "addNewsButton") {
+        NewsForm()
+    }
+})

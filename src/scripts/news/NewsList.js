@@ -36,6 +36,7 @@ const render = () => {
     }
     newsContainer.innerHTML = `
     <h3>My News</h3>
+    <button id="addNewsButton"> Add News </button>
     ${newsHTMLRepresentations}
     `
 }
