@@ -4,7 +4,7 @@
 import {getNews, useNews, deleteNews} from "./NewsDataProvider.js"
 import {NewsCard} from "./NewsHTMLCard.js"
 
-const newsContainer = document.querySelector(".newsDisplayContainer");
+const newsContainer = document.querySelector("#newsDisplayContainer");
 const eventHub = document.querySelector(".container")
 
 //listning the newsStateChanged created in NewsDataProvider.js
@@ -49,3 +49,4 @@ eventHub.addEventListener("click", clickEvent => {
        )
     }
 })
+

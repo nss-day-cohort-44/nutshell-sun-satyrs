@@ -21,10 +21,20 @@ export const getNews = () => {
         });
 };
 
-// using the .slice method to get the copy of the news array and export it.
+//using the .slice method to get the copy of the news array and export it.
+// export const useNews = () => {
+//     return news.slice();
+// };
+
+// 
 export const useNews = () => {
-    return news.slice();
-};
+    let sortedArray = news.slice
+     sortedArray = news.sort(
+        (currentNews, nextNews) =>
+            Date.parse(currentNews.date) - Date.parse(nextNews.date)
+    )
+        return sortedArray
+}
 
 export const saveNews = (news) => {
     return fetch('http://localhost:8088/news', {
@@ -37,7 +47,6 @@ export const saveNews = (news) => {
     .then(getNews)
     .then(dispatchStateChangeEvent)
 }
-
 
 export const deleteNews = (newsId) => {
     return fetch(`http://localhost:8088/news/${newsId}`, {
