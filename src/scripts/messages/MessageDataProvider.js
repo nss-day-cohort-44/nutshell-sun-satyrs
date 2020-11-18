@@ -13,7 +13,6 @@ export const getMessages = () => {
         .then(response => response.json())
         .then(parsedMessages => {
             arrayOfMessages = parsedMessages
-            console.log(arrayOfMessages)
         })
 }
 
