@@ -17,6 +17,5 @@ export const Nutshell = () => {
     NewsForm()
     NewsList()
     MessageList()
-    MessageForm()
     TaskList()
 }
