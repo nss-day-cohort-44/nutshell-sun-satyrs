@@ -1,3 +1,15 @@
 .dashboard {
     display: flex;
 }
+
+.container--left {
+    display: flex;
+}
+
+.card {
+    padding: .5em;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    background-color: lightblue;
+}

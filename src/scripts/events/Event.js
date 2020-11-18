@@ -2,6 +2,7 @@
 // Purpose: Responsible for HTML for individual event
 
 import { deleteEvent } from "./EventDataProvider.js"
+import { weatherHTML } from "../weather/Weather.js"
 
 export const EventAsHTML = (event) => {
      return `
@@ -9,7 +10,9 @@ export const EventAsHTML = (event) => {
             <h3>${event.name}</h3>
             <div class="event__date">${event.date}</div>
             <div class"event__location">${event.location}</div>
+            <button id="weatherButton--${event.id}">Show Weather</button>
             <button id="deleteEvent--${event.id}">Delete Event</button>
+            <div class="weatherDisplay--${event.id}"></div>
         </section>
     `
 }
@@ -24,3 +27,22 @@ eventHub.addEventListener("click", clickEvent => {
         deleteEvent(id)
     }
 })
+
+
+// storing the weatherHTML response in a variable
+
+
+// listens for weather button and invokes weather function
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id.startsWith("weatherButton--")){
+       
+        const [prefix, id] = clickEvent.target.id.split("--")
+
+        // needed to display weather for the appropriate event
+        const contentElement = document.querySelector(`.weatherDisplay--${id}`)
+        const weather = weatherHTML()
+        contentElement.innerHTML = `${weather}`
+    }
+})
+
+ 
