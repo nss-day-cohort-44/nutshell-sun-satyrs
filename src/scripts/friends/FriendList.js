@@ -32,15 +32,16 @@ const render = () => {
     let friendHTMLRep = ""
 
     const activeUserFriendRelationships = friends.filter(friend => friend.userId === parseInt(sessionStorage.getItem("activeUser")))
-    const activeUserFriends = activeUserFriendRelationships.map(friend => {
-        const matchingFriends = users.filter(user => user.id === friend.userFriendId)
-        return matchingFriends
-    })
 
     console.log(activeUserFriendRelationships)
-        console.log(activeUserFriends)
 
-    for (const friend of activeUserFriends) {
+    const matchedFriends = activeUserFriendRelationships.map(obj => {
+        const matchedUsers = users.filter(user => user.id === obj.userFriendId)
+        return matchedUsers
+    })
+    console.log(matchedFriends)
+
+    for (const friend of matchedFriends) {
         friendHTMLRep += FriendAsHTML(friend)
     }
     contentElement.innerHTML = `
@@ -48,6 +49,6 @@ const render = () => {
         <button id="addFriend">Add Friend</button>
         ${friendHTMLRep}
     `
+  
 }
-
 
