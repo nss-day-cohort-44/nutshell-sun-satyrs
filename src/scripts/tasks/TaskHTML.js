@@ -40,29 +40,3 @@ eventHub.addEventListener("click", clickEvent => {
         updateTask(id)
     }
 })
-
-
-// Given a user wants to mark a task complete
-
-// TaskHTML.js
-// Then there should be a checkbox next to each task that, 
-    // update TaskHTML so each task has a checkbox - done
-    // create/dispatch new custom event when checkbox is selected - done
-    // invoke updateTask(id) in eventListener
-
-
-// TaskList.js
-    // revisit render function to only render task with complete === false
-    // build a new array with filter or similar
-
-
-
-
-// Better Pattern
-    // TaskDataProvider.js
-// when clicked, should mark the task as complete in the database
-    // add eventListener for checkbox event
-    // invoke updateTask() as event action
-
-
-    // <div class="task__status">Complete:${task.complete}</div>
