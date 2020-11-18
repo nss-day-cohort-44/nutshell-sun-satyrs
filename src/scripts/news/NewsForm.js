@@ -34,6 +34,7 @@ eventHub.addEventListener("click", clickEvent =>{
     
     if(clickEvent.target.id === "saveNews") {
         // console.log(clickEvent)
+        const userId = parseInt(sessionStorage.getItem("activeUser"))
         const title = document.querySelector("#news--title").value
         const synopsis = document.querySelector("#news--synopsis").value
         const url = document.querySelector("#news--url").value
@@ -43,6 +44,7 @@ eventHub.addEventListener("click", clickEvent =>{
         
         // making the new object of newNews with ES6 style.
         const newNews = {
+            userId,
             title,
             synopsis,
             url,
