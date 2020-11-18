@@ -46,10 +46,10 @@ export const saveTask = task => {
     .then(getTasks)
     .then(dispatchStateChangeEvent)
 }
-
+// Given a user is on the task list and wants to remove a task
 // delete a given event object from the API/database.json, invoke getTasks() and dispatchStateChangeEvent
 export const deleteTask = taskId => {
-    return fetch(`httl://localhost:8088/tasks/${taskId}`, {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
         method: "DELETE"
     })
     .then(getTasks)
