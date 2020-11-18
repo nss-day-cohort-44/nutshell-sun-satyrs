@@ -14,7 +14,7 @@ export const Nutshell = () => {
     //    
     EventList()
     taskButton()
-    NewsForm()
+    // NewsForm()
     NewsList()
     MessageList()
     TaskList()
