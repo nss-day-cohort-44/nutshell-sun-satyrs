@@ -47,7 +47,7 @@ export const deleteMessage = messageId => {
 
 // This function is used to update the application state. This will be used after modifying anything in the API.
 const dispatchStateChangeEvent = () => {
-    const messageStateChanged = new CustomEvent("userStateChanged")
+    const messageStateChanged = new CustomEvent("messageStateChanged")
 
     eventHub.dispatchEvent(messageStateChanged)
 }
