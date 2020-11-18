@@ -55,3 +55,29 @@ export const deleteTask = taskId => {
     .then(getTasks)
     .then(dispatchStateChangeEvent)
 } 
+
+// not tested, 
+export const updateTask = (taskId) => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "PUT",
+        body: JSON.stringify(
+            {
+                "complete": false,
+            })
+        // 
+    })
+    .then(getTasks)
+    .then(dispatchStateChangeEvent)
+        
+}
+
+// TaskHTML - render a checkbox on each task card
+    // when clicked, should mark the task as complete in the database
+    // dispatch event from TaskHTML to be received by TaskDataProvider.js
+    // TaskDataProvider.js calls updateTask in response to event
+
+// TaskDataProvider.js - updateTask and eventListener that calls updateTask
+
+// And prevent the task from being displayed in the list
+    // update render to only display taks where complete === false
+    // maybe build new array populated with only complete == false
