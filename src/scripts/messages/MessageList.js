@@ -31,8 +31,15 @@ const renderMessages = () => {
     for (const messageObj of activeUserMessages) {
         messageAsHTML += Message(messageObj)
     }
-    contentTarget.innerHTML += `
+    contentTarget.innerHTML = `
         <h3>Messages</h3>
+        <button id="createMessage"> New Message </button>
         ${messageAsHTML}
         `
 }
+
+
+// EVENTS START HERE
+eventHub.addEventListener("messageStateChanged", response => {
+    MessageList()
+})
