@@ -15,7 +15,7 @@ const dispatchStateChangeEvent = () => {
 // empty array to store events
 let events = []
 
-// retrieves existing notes from json file, parses them and adds them to an empty array
+// retrieves existing events from json file, parses them and adds them to an empty array
 export const getEvents = () => {
     return fetch("http://localhost:8088/events")
         .then(res => res.json())
