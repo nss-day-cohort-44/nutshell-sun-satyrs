@@ -28,7 +28,6 @@ export const getTasks = () => {
     .then(response => response.json() )
     .then (
         parsedTasks => {
-            console.table(parsedTasks)
             tasks = parsedTasks
         }
     )
