@@ -2,6 +2,7 @@
 // Purpose: Renders search bar used to add friends
 
 import { useUsers } from "../users/UserDataProvider.js"
+import { saveFriend } from "../friends/FriendDataProvider.js"
 
 const contentTarget = document.querySelector(".container--right")
 const eventHub = document.querySelector(".container")
@@ -17,12 +18,24 @@ export const renderSearchBar = () => {
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id === "friend__addButton") {
         const newFriendUserName = document.querySelector("#friend__searchBar").value
-        console.log(newFriendUserName)
+        databaseFriendCheck(newFriendUserName)
     }
 })
 
 const databaseFriendCheck = (input) => {
     const activeUserId = parseInt(sessionStorage.getItem("activeUser"))
     const users = useUsers()
-    const newFriendId = users.find(friend => friend.username === input)
+    const userFriendId = users.find(friend => friend.username === input)
+
+    if (userFriendId) {
+        const newFriend = {
+            activeUserId,
+            userFriendId
+        }
+        console.log("activeUserId", activeUserId)
+        console.log("userFriendId", userFriendId)
+        saveFriend(newFriend)
+    } else {
+        window.alert("User doesn't exist!  😭")
+    }
 }
