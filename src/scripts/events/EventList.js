@@ -50,7 +50,7 @@ const render = () => {
     `
 }
 
-
+// identifies the first object in the list and gives it a new class
 const firstEvent = () => {
     document.getElementById(activeUserEvents[0].id).classList.add("event__first")
 }

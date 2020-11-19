@@ -9,7 +9,7 @@ const eventHub = document.querySelector(".container")
 const dispatchStateChangeEvent = () => {
     const eventStateChanged = new CustomEvent("friendStateChanged")
 
-    eventHub.dispatchEvent(friendStateChanged)
+    eventHub.dispatchEvent(eventStateChanged)
 }
 
 // empty array to store friends

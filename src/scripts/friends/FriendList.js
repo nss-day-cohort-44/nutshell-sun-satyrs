@@ -35,19 +35,14 @@ const render = () => {
 
     console.log(activeUserFriendRelationships)
 
-    const matchedFriends = activeUserFriendRelationships.map(obj => {
-        const matchedUsers = users.find(user => user.id === obj.userFriendId)
-        return matchedUsers
+        activeUserFriendRelationships.forEach(rel => {
+        const matchedUser = users.find(user => user.id === rel.userFriendId)
+        friendHTMLRep += FriendAsHTML(matchedUser, rel)
     })
-    console.log(matchedFriends)
 
-    for (const friend of matchedFriends) {
-        friendHTMLRep += FriendAsHTML(friend)
-    }
     contentElement.innerHTML = `
         <h3>Friends</h3>
         <button id="addFriend">Add Friend</button>
         ${friendHTMLRep}
     `
 }
-
