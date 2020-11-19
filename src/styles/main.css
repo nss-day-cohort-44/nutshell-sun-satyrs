@@ -13,3 +13,10 @@
     border: 1px solid black;
     background-color: lightblue;
 }
+
+.event__first {
+    font-weight: bold;
+    font-size: larger;
+    background-color: white;
+    padding: .5em;
+}

@@ -26,18 +26,20 @@ export const EventList = () => {
         events = useEvents()
 
         render()
+        firstEvent()
     })
 }
 
+let activeUserEvents = []
 // responsible for filtering events for current user and rendering
 const render = () => {
     let eventHTMLRep = ""
 
-    const activeUserEvents = events.filter(event => event.userId === parseInt(sessionStorage.getItem("activeUser")))
-    console.log(events)
-    console.log(activeUserEvents)
-    console.log(sessionStorage.getItem("activeUser"))
+    activeUserEvents = events.filter(event => event.userId === parseInt(sessionStorage.getItem("activeUser")))
     
+    // document.getElementById(activeUserEvents[0].id).classList.add("event__first")
+    
+
     for (const event of activeUserEvents) {
     eventHTMLRep += EventAsHTML(event)
     }
@@ -48,3 +50,7 @@ const render = () => {
     `
 }
 
+// identifies the first object in the list and gives it a new class
+const firstEvent = () => {
+    document.getElementById(activeUserEvents[0].id).classList.add("event__first")
+}

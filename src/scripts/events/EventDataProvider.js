@@ -15,7 +15,7 @@ const dispatchStateChangeEvent = () => {
 // empty array to store events
 let events = []
 
-// retrieves existing notes from json file, parses them and adds them to an empty array
+// retrieves existing events from json file, parses them and adds them to an empty array
 export const getEvents = () => {
     return fetch("http://localhost:8088/events")
         .then(res => res.json())
@@ -24,9 +24,14 @@ export const getEvents = () => {
         })
 }
 
-// creates a slice of the events array
+// creates a slice of the events array sorted by date
 export const useEvents = () => {
-    return events.slice()
+    let sortedArray = events.slice()
+    sortedArray = events.sort(
+        (currentEvents, nextEvents) =>
+            Date.parse(currentEvents.date) - Date.parse(nextEvents.date)
+    )
+        return sortedArray
 }
 
 // posts new event objects to the json file, invokes getEvents() and dispatchStateChangeEvent()
