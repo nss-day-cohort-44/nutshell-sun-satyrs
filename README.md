@@ -31,5 +31,17 @@ Dependency Graph - Zoom view
 
 ![Nutshell dependency graph](https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Dependency%20Graph%20%232.png?raw=true "Nutshell dependency graph")
 
+## Wireframe  
+
+### Logon/Registration screen
+![Logon/Registration screen]( https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Sun-satyrs-wireframe.jpeg?raw=true "Logon/Registration screen")
+
+### Dashboard View
+![Dashboard view](https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Sun-satyrs-wireframe2.jpeg?raw=true "Dashboard view")
+
+### Dashboard Form Area
+![Dashboard Form Area](https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Sun-satyrs-wireframe3.jpeg?raw=true "Dashboard Form Area")
+
+
 
 
