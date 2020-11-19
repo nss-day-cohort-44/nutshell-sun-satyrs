@@ -40,3 +40,4 @@ const dispatchStateChangeEvent = () => {
 
     eventHub.dispatchEvent(userStateChanged)
 }
+

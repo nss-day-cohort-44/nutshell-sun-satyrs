@@ -4,6 +4,7 @@
 import { FriendAsHTML } from "./Friend.js"
 import { useUsers, getUsers } from "../users/UserDataProvider.js"
 import { useFriends, getFriends } from "./FriendDataProvider.js"
+import { renderSearchBar } from "./FriendSearch.js"
 
 
 const eventHub = document.querySelector(".container")
@@ -44,3 +45,8 @@ const render = () => {
         ${friendHTMLRep}
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "addFriend")
+    renderSearchBar()
+})
