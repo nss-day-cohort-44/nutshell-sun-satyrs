@@ -18,8 +18,17 @@ export const Message = (messageObj, matchedUser) => {
         `
 }
 
+// TODO: Duplicate Message and remove deleteButton
+export const GlobalMessage = (messageObj, matchedUser) => {
+    return `
+    <section class="message" id="${messageObj.id}">
+        <div class"message__content">From ${matchedUser.username}: ${messageObj.message} <br>Sent: ${messageObj.timestamp}</div> 
+    </section>
+    `
+}
 
-// EVENTS START HERE
+
+//                          EVENTS START HERE
 
 // This event is responsible for deleting a newMessage from database.json API.
 eventHub.addEventListener("click", clickEvent => {
