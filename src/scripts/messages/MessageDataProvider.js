@@ -13,13 +13,17 @@ export const getMessages = () => {
         .then(response => response.json())
         .then(parsedMessages => {
             arrayOfMessages = parsedMessages
-            console.log(arrayOfMessages)
         })
 }
 
 // Create a copy of arrayOfMessages for data manipulation
 export const useMessages = () => {
-    return arrayOfMessages.slice()
+    let messagesSortedByTimestamp = arrayOfMessages.slice()
+    messagesSortedByTimestamp = arrayOfMessages.sort(
+        (currentMessage, nextMessage) =>
+        Date.parse(currentMessage.timestamp) - Date.parse(nextMessage.timestamp)
+    )
+    return messagesSortedByTimestamp
 }
 
 // Save new messageObj to database.json and then update application state.
