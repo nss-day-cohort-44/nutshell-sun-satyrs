@@ -16,7 +16,8 @@ export const taskButton = () => {
 }
 
 
-// listen for matching click event and create/dispatch CustomEvent: "createTaskClicked"
+// listen for matching click event and invoke renderTaskForm()
+// Would be better to refactor to eventDriven
 eventHub.addEventListener("click", (clickEvent) => {
     if (clickEvent.target.id === "create-task-button") {
         // debug
