@@ -28,9 +28,18 @@ const renderMessages = () => {
 
     const activeUserMessages = messages.filter(message => message.userId === parseInt(sessionStorage.getItem("activeUser")))
 
-    for (const messageObj of activeUserMessages) {
+
+    activeUserMessages.forEach(taco => {
+        const matchedUser = users.find(userToFind => 
+            userToFind.id === taco.userId)
+        console.log("Matched user:", matchedUser)
+        console.log(activeUserMessages)
+        messageAsHTML += Message(taco, matchedUser)
+    })
+
+/*     for (const messageObj of activeUserMessages) {
         messageAsHTML += Message(messageObj)
-    }
+    } */
     contentTarget.innerHTML = `
         <h3>Messages</h3>
         <button id="createMessage"> New Message </button>
