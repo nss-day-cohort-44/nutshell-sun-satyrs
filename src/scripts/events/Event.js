@@ -17,6 +17,8 @@ export const EventAsHTML = (event) => {
     `
 }
 
+
+
 const eventHub = document.querySelector(".container")
 
 // listens for delete button. Separates id and passes the id through the delete function 
