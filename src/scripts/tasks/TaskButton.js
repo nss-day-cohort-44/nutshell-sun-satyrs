@@ -21,13 +21,5 @@ export const taskButton = () => {
 eventHub.addEventListener("click", (clickEvent) => {
     if (clickEvent.target.id === "create-task-button") {
         renderTaskForm()
-
-        // create event object 
-        // const createTaskButtonClicked = new CustomEvent("createTaskClicked")
-
-        // what about detail: key/value pair
-
-        // dispatch event object
-        // eventHub.dispatchEvent(createTaskButtonClicked)
     }
 })

@@ -12,4 +12,3 @@ export const weatherHTML = () => {
 const weatherWords = ["Sunny", "Cloudy", "Rainy"]
 
 const randomWeather = Math.floor(Math.random() * weatherWords.length);
-

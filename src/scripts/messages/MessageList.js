@@ -26,8 +26,8 @@ export const MessageList = () => {
 const renderMessages = () => {
     let messageAsHTML = ""
 
-    const activeUserMessages = messages.filter(message => message.userId === parseInt(sessionStorage.getItem("activeUser")))
-
+        // The "+" on the lines below is shorthand for parseInt()
+    const activeUserMessages = messages.filter(message => message.userId === +(sessionStorage.getItem("activeUser")))
     const globalMessages = messages.filter(message => message.userId !== +(sessionStorage.getItem("activeUser")))
 
     /* for (const messageObj of messages) {

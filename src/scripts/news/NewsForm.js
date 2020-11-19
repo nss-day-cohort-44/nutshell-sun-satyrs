@@ -11,7 +11,7 @@ const  render = () => {
     contentTarget.innerHTML = `
     <form id="articleformbox">
     <h2>News Article</h2><br>
-             <label for="title">Title</label>
+            <label for="title">Title</label>
             <input type="text" id="news--title" placeholder="News Title">
                 <br>
             <label for="synopsis">Synopsis</label>

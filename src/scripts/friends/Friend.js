@@ -22,7 +22,3 @@ eventHub.addEventListener("click", clickEvent => {
         deleteFriend(id)
     }
 })
-
-
-
-

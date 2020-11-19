@@ -17,8 +17,8 @@ export const NewsList = () => {
     getNews()
     .then(getUsers)
     .then(() => {
-     news = useNews()
-     users = useUsers()
+    news = useNews()
+    users = useUsers()
     
     render()
 

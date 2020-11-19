@@ -15,9 +15,6 @@ export const MessageForm = () => {
     `
 }
 
-
-
-
 //                          EVENTS START HERE
 
 // Listen for a click on "New Message" button from MessageList module. Respond by rendering the MessageForm component to right side of screen, so that the user can type a new message.
@@ -30,6 +27,7 @@ eventHub.addEventListener("click", clickEvent => {
 // This event is responsible for saving a newMessage to database.json API.
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "message--sendButton") {
+        // The "+" on the line below is shorthand for parseInt()
         const userId = +(sessionStorage.getItem("activeUser"))
         const message = document.getElementById("message--content").value
         const timestamp = new Date().toLocaleString()

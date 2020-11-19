@@ -2,6 +2,7 @@
 Author: Travis Stevenson
 Purpose: This module is responsible for creating an HTML representation of a single messageObj.
 */
+
 // IMPORT STATEMENTS START HERE
 import { deleteMessage } from "./MessageDataProvider.js"
 
@@ -18,7 +19,6 @@ export const Message = (messageObj, matchedUser) => {
         `
 }
 
-// TODO: Duplicate Message and remove deleteButton
 export const GlobalMessage = (messageObj, matchedUser) => {
     return `
     <section class="message" id="${messageObj.id}">
