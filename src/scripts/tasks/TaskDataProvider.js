@@ -56,7 +56,7 @@ export const deleteTask = taskId => {
     .then(dispatchStateChangeEvent)
 } 
 
-// not tested, 
+// update a given object's [complete] property value for a given task taskId 
 export const updateTask = (taskId) => {
     return fetch(`http://localhost:8088/tasks/${taskId}`, {
         method: "PATCH",
