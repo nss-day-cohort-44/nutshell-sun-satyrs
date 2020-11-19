@@ -20,7 +20,3 @@ if (!sessionStorage.length) {
 else {
     Nutshell()
 }
-
-
-
-

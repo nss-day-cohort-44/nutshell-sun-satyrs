@@ -13,7 +13,6 @@ export const getUsers = () => {
         .then(response => response.json())
         .then(parsedUsers => {
             arrayOfUsers = parsedUsers
-            console.log(arrayOfUsers)
         })
 }
 

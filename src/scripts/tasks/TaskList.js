@@ -43,7 +43,6 @@ const render = () => {
         taskHTMLRep += TaskAsHTML(task)
     }
     const button = taskButton()
-    console.log(button)
     targetElement.innerHTML = `
     <h3>User Task</h3>
         ${button}

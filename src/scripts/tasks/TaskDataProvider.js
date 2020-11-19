@@ -70,7 +70,6 @@ export const updateTask = (taskId) => {
             }
     })
     .then(getTasks)
-    .then(console.log(taskId))
     .then(dispatchStateChangeEvent)
         
 }

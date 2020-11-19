@@ -17,16 +17,9 @@ export const getNews = () => {
         .then(response => response.json())
         .then(parsedNews => {
             news = parsedNews;
-            // console.log(news)
         });
 };
 
-//using the .slice method to get the copy of the news array and export it.
-// export const useNews = () => {
-//     return news.slice();
-// };
-
-// 
 export const useNews = () => {
     let sortedArray = news.slice
      sortedArray = news.sort(

@@ -33,8 +33,6 @@ const render = () => {
 
     const activeUserFriendRelationships = friends.filter(friend => friend.userId === parseInt(sessionStorage.getItem("activeUser")))
 
-    console.log(activeUserFriendRelationships)
-
         activeUserFriendRelationships.forEach(rel => {
         const matchedUser = users.find(user => user.id === rel.userFriendId)
         friendHTMLRep += FriendAsHTML(matchedUser, rel)

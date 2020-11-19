@@ -20,8 +20,6 @@ export const taskButton = () => {
 // Would be better to refactor to eventDriven
 eventHub.addEventListener("click", (clickEvent) => {
     if (clickEvent.target.id === "create-task-button") {
-        // debug
-        console.log("Create New Task button was clicked")
         renderTaskForm()
 
         // create event object 

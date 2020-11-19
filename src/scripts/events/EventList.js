@@ -37,9 +37,6 @@ const render = () => {
 
     activeUserEvents = events.filter(event => event.userId === parseInt(sessionStorage.getItem("activeUser")))
     
-    // document.getElementById(activeUserEvents[0].id).classList.add("event__first")
-    
-
     for (const event of activeUserEvents) {
     eventHTMLRep += EventAsHTML(event)
     }

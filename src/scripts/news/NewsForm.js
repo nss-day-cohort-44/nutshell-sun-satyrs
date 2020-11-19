@@ -33,14 +33,12 @@ const  render = () => {
 eventHub.addEventListener("click", clickEvent =>{
     
     if(clickEvent.target.id === "saveNews") {
-        // console.log(clickEvent)
         const userId = parseInt(sessionStorage.getItem("activeUser"))
         const title = document.querySelector("#news--title").value
         const synopsis = document.querySelector("#news--synopsis").value
         const url = document.querySelector("#news--url").value
         const date = document.querySelector("#news--date").value
         const timestamp = Date.now()
-        // console.log("newsTitle: ", newsTitle);
         
         // making the new object of newNews with ES6 style.
         const newNews = {
@@ -51,7 +49,6 @@ eventHub.addEventListener("click", clickEvent =>{
             date,
             timestamp
         }
-        // console.log(newNews)
         saveNews(newNews)
         
         

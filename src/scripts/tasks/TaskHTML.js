@@ -35,8 +35,6 @@ eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id.startsWith("taskComplete--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
 
-        console.log(`task complete button selected for taskComplete--${id}`)
-        console.log(id)
         updateTask(id)
     }
 })

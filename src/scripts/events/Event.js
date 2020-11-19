@@ -28,10 +28,6 @@ eventHub.addEventListener("click", clickEvent => {
     }
 })
 
-
-// storing the weatherHTML response in a variable
-
-
 // listens for weather button and invokes weather function
 eventHub.addEventListener("click", clickEvent => {
     if(clickEvent.target.id.startsWith("weatherButton--")){
@@ -44,5 +40,3 @@ eventHub.addEventListener("click", clickEvent => {
         contentElement.innerHTML = `${weather}`
     }
 })
-
- 

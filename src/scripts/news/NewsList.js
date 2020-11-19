@@ -43,7 +43,6 @@ const render = () => {
 
 eventHub.addEventListener("click", clickEvent => {
 
-    // console.log(clickEvent, "id?")
     if (clickEvent.target.id.startsWith("deleteNews--")) {
         const [prefix, id] = clickEvent.target.id.split("--")
 
