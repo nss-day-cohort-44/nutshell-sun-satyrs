@@ -26,6 +26,9 @@ export const EventList = () => {
         events = useEvents()
 
         render()
+        // firstEvent()
+
+        
     })
 }
 
@@ -34,10 +37,10 @@ const render = () => {
     let eventHTMLRep = ""
 
     const activeUserEvents = events.filter(event => event.userId === parseInt(sessionStorage.getItem("activeUser")))
-    console.log(events)
-    console.log(activeUserEvents)
-    console.log(sessionStorage.getItem("activeUser"))
     
+    // document.getElementById(activeUserEvents[0].id).classList.add("event__first")
+    
+
     for (const event of activeUserEvents) {
     eventHTMLRep += EventAsHTML(event)
     }
@@ -46,5 +49,16 @@ const render = () => {
         <button id="addEvent">Add Event</button>
         ${eventHTMLRep}
     `
+    console.log(document.getElementById(activeUserEvents[0]))
 }
 
+
+// const firstEvent = () => {
+//     getEvents()
+//     .then(() => {
+//          events = useEvents()
+//     })
+//     .then(() => {
+//     document.getElementById(events[0].id).classList.add("event__First")
+// })
+// }
