@@ -4,6 +4,7 @@
 import { FriendAsHTML } from "./Friend.js"
 import { useUsers, getUsers } from "../users/UserDataProvider.js"
 import { useFriends, getFriends } from "./FriendDataProvider.js"
+import { renderSearchBar } from "./FriendSearch.js"
 
 
 const eventHub = document.querySelector(".container")
@@ -33,8 +34,6 @@ const render = () => {
 
     const activeUserFriendRelationships = friends.filter(friend => friend.userId === parseInt(sessionStorage.getItem("activeUser")))
 
-    console.log(activeUserFriendRelationships)
-
         activeUserFriendRelationships.forEach(rel => {
         const matchedUser = users.find(user => user.id === rel.userFriendId)
         friendHTMLRep += FriendAsHTML(matchedUser, rel)
@@ -46,3 +45,8 @@ const render = () => {
         ${friendHTMLRep}
     `
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if(clickEvent.target.id === "addFriend")
+    renderSearchBar()
+})
