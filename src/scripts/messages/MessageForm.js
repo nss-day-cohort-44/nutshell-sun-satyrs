@@ -33,9 +33,6 @@ eventHub.addEventListener("click", clickEvent => {
         const userId = +(sessionStorage.getItem("activeUser"))
         const message = document.getElementById("message--content").value
         const timestamp = new Date().toLocaleString()
-        // let date = new Date()
-        // const timestamp = date.getTime()
-
 
         const newMessage = {
             userId,

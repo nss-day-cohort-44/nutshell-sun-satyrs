@@ -8,7 +8,7 @@ export const EventAsHTML = (event) => {
      return `
         <section class="event" id="${event.id}">
             <h3>${event.name}</h3>
-            <div class="event__date">${event.date}</div>
+            <div class="event__date">${new Date(event.date).toLocaleDateString('en-US')}</div>
             <div class"event__location">${event.location}</div>
             <button id="weatherButton--${event.id}">Show Weather</button>
             <button id="deleteEvent--${event.id}">Delete Event</button>

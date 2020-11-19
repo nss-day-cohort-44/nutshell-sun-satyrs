@@ -9,10 +9,10 @@ import { deleteMessage } from "./MessageDataProvider.js"
 const eventHub = document.querySelector(".container")
 
 // MAIN COMPONENT OF MODULE
-export const Message = (messageObj) => {
+export const Message = (messageObj, matchedUser) => {
     return `
         <section class="message" id="${messageObj.id}">
-            <div class"message__content">To (UserId): ${messageObj.userId} - ${messageObj.message} ${messageObj.timestamp}</div>
+            <div class"message__content">From ${matchedUser.username}: ${messageObj.message} <br>Sent: ${messageObj.timestamp}</div>
             <button id="deleteMessage--${messageObj.id}"> Delete Message </button>
         </section>
         `
