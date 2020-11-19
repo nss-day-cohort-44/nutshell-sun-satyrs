@@ -23,17 +23,16 @@ eventHub.addEventListener("click", clickEvent => {
 })
 
 const databaseFriendCheck = (input) => {
-    const activeUserId = parseInt(sessionStorage.getItem("activeUser"))
+    const userId = parseInt(sessionStorage.getItem("activeUser"))
     const users = useUsers()
     const userFriendId = users.find(friend => friend.username === input)
 
     if (userFriendId) {
         const newFriend = {
-            activeUserId,
-            userFriendId
+            userId,
+            userFriendId: userFriendId.id
         }
-        console.log("activeUserId", activeUserId)
-        console.log("userFriendId", userFriendId)
+
         saveFriend(newFriend)
     } else {
         window.alert("User doesn't exist!  😭")
