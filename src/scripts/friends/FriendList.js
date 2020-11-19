@@ -36,7 +36,7 @@ const render = () => {
     console.log(activeUserFriendRelationships)
 
     const matchedFriends = activeUserFriendRelationships.map(obj => {
-        const matchedUsers = users.filter(user => user.id === obj.userFriendId)
+        const matchedUsers = users.find(user => user.id === obj.userFriendId)
         return matchedUsers
     })
     console.log(matchedFriends)
@@ -49,6 +49,5 @@ const render = () => {
         <button id="addFriend">Add Friend</button>
         ${friendHTMLRep}
     `
-  
 }
 
