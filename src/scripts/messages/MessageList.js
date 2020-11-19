@@ -3,7 +3,7 @@ Author: Travis Stevenson
 Purpose: This module is responsible for rendering an array of all messages to the DOM.
 */
 
-import { Message } from "./Message.js"
+import { Message, GlobalMessage } from "./Message.js"
 import { getUsers, useUsers } from "../users/UserDataProvider.js";
 import { getMessages, useMessages } from "./MessageDataProvider.js"
 
@@ -28,18 +28,26 @@ const renderMessages = () => {
 
     const activeUserMessages = messages.filter(message => message.userId === parseInt(sessionStorage.getItem("activeUser")))
 
+    const globalMessages = messages.filter(message => message.userId !== +(sessionStorage.getItem("activeUser")))
 
+    /* for (const messageObj of messages) {
+        messageAsHTML += Message(messageObj)
+    } */
+
+    // Match Messages foreign key "userId" to User primary key "id" in order to render only the activeUser's messages and prepend their name to each message.
     activeUserMessages.forEach(taco => {
         const matchedUser = users.find(userToFind => 
             userToFind.id === taco.userId)
-        console.log("Matched user:", matchedUser)
-        console.log(activeUserMessages)
         messageAsHTML += Message(taco, matchedUser)
     })
+    
+    // Match Messages foreign key "userId" to User primary key "id" in order to render every user's messages and prepend their name to each message. 
+    globalMessages.forEach(taco => {
+        const matchedUser = users.find(userToFind => 
+            userToFind.id === taco.userId)
+        messageAsHTML += GlobalMessage(taco, matchedUser)
+    })
 
-/*     for (const messageObj of activeUserMessages) {
-        messageAsHTML += Message(messageObj)
-    } */
     contentTarget.innerHTML = `
         <h3>Messages</h3>
         <button id="createMessage"> New Message </button>
