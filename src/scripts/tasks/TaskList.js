@@ -1,17 +1,7 @@
-// When the user is viewing their task list
-// completed task
-// And prevent the task from being displayed in the list
-// filter based on completed property, this component will never render a completed task
-
-// Given a user is on the task list and wants to remove a task
-// When when the user performs a gesture on the delete affordance
-// Then the task should be removed from the database
-// And the task should be removed from the task list
-
-
-// loop through and render get to dom
-// conditionals - if its completed. do not render completed task
-// listeners - create task button to nutshell.js?
+/*
+author: davidb
+purpose: filter tasks by userId and build out task card and render to DOM
+*/
 
 // import external modules and components
 import { getUsers, useUsers } from '../users/UserDataProvider.js'
@@ -44,6 +34,7 @@ export const TaskList = () => {
     })
 }
 
+// filter tasks by userId and build out task card and render to DOM
 const render = () => {
     let taskHTMLRep = ""
 

@@ -24,7 +24,7 @@ export const useTasks = () => {
 
 // fetch & format data and populate tasks array
 export const getTasks = () => {
-    return fetch("http://localhost:8088/tasks")
+    return fetch("http://localhost:8088/tasks?complete=false")
     .then(response => response.json() )
     .then (
         parsedTasks => {
@@ -55,3 +55,22 @@ export const deleteTask = taskId => {
     .then(getTasks)
     .then(dispatchStateChangeEvent)
 } 
+
+// not tested, 
+export const updateTask = (taskId) => {
+    return fetch(`http://localhost:8088/tasks/${taskId}`, {
+        method: "PATCH",
+        body: JSON.stringify(
+            {
+                complete: true
+            }),
+            headers:
+            {
+               "Content-type": "application/json; charset=UTF-8"
+            }
+    })
+    .then(getTasks)
+    .then(console.log(taskId))
+    .then(dispatchStateChangeEvent)
+        
+}

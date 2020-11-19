@@ -2,11 +2,6 @@
 author : davidb
 purpose: responsible for creating and rendering the task form
 */
-// Then a form should be presented to the user with a field to enter in the task name
-// And a field to enter in the expected completion date
-// POST method to replace object
-// timestamp via date.now()
-
 
 // import components from external modules
 import { saveTask } from './TaskDataProvider.js'
