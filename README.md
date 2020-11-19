@@ -1,8 +1,5 @@
 # Nutshell: The Information Dashboard
 
-## Technology Stack
-1. 
-
 This is a simple one page application showcasing features utilizing the following Javascript concepts.  
 1. API CRUD Operations
 1. Array methods such as find, filter, and map
@@ -30,6 +27,7 @@ Nutshell dependency graph
 ![Nutshell dependency graph](https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Dependency%20Graph.png?raw=true "Nutshell dependency graph")
 
 
+Dependency Graph - Zoom view
 
 ![Nutshell dependency graph](https://github.com/nss-day-cohort-44/nutshell-sun-satyrs/blob/master/Dependency%20Graph%20%232.png?raw=true "Nutshell dependency graph")
 
