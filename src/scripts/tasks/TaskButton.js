@@ -1,6 +1,4 @@
-
 import { renderTaskForm } from './TaskForm.js'
-
 
 // get a ref to the landing spot in index.html for the witnesses button
 const buttonTarget = document.querySelector("#tasks")
