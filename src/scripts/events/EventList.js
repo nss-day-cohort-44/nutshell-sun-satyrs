@@ -5,7 +5,8 @@ import { useUsers, getUsers } from "../users/UserDataProvider.js"
 import { useEvents, getEvents } from "./EventDataProvider.js"
 import { EventAsHTML } from "./Event.js"
 import { getFriends, useFriends } from "../friends/FriendDataProvider.js"
-import { renderEventForm } from "./EventForm.js"
+import './EventForm.js'
+
 
 const eventHub = document.querySelector(".container")
 const contentElement = document.querySelector("#events")
