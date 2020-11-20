@@ -1,22 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+header {
+    text-align: center;
+    background-color: #3b5998;
+    padding: 2rem;
+    color: white;
+    margin-bottom: 2rem;
+}
+
 .dashboard {
     display: flex;
 }
 
 .container--left {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    padding: .5em;
 }
 
 .card {
     padding: .5em;
+    margin: .5em;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    border-radius: 1em;
     background-color: lightblue;
+    box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.648);
 }
 
+#messages {
+    overflow: scroll;
+}
 .event__first {
     font-weight: bold;
     font-size: larger;
-    background-color: #FFE8B3;
+    background-color: #3b5998;
     padding: .5em;
+    color: white;
+    border-radius: 1em;
 }
